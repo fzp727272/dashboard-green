@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>chart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <!-- Add your keywords and description here for SEO. -->
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+  <!-- Uncomment this if you need apple touch icon. -->
+  <!--
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    -->
+  <!-- Don't delete this. It's needed for development workflow. -->
+  <link rel="stylesheet" href="stylesheets/bundle.css">
+</head>
+
+<body>
+
+  <div class="dashboard-container">
+    <!-- <div class="dashboard-row-0">
+      <div class="title">
+        杨腾数据可视化界面
+      </div>
+    </div> -->
+    <div class="dashboard-row-1">
+
+
+      <div class="col-8">
+        <div class=" dashboard-panel">
+          <div id="tenDaysChart" class="chart-container"></div>
+
+
+        </div>
+      </div>
+      <div class="col-3">
+        <div class=" dashboard-panel">
+          <div   class="chart-container" style="display: flex;flex-direction:row;flex:2;position: relative">
+            <div id="orderToday" style="flex:1"></div>
+            <div class="tenDaysChart-list">
+
+                <div class="list-plan">
+                  <div>
+                    <span class="tag">
+    
+                    </span>
+                    <span class="text"> 计划完成</span>
+                    <p class="number"> 12313</p>
+                  </div>
+                </div>
+                <div class="list-complete">
+                  <div>
+                    <span class="tag">
+    
+                    </span>
+                    <span class="text"> 已完成</span>
+                    <p id="plan-complete-value" class="number"> 12313</p>
+                  </div>
+                </div>
+              </div>
+          </div>
+    
+
+          <div class="order-today-data">
+   <div class="list-column">
+            <div class="list">
+              <div  class="label">已调度</div>
+              <div id="already-dispatch" class="text">2000</div>
+            </div>
+            <div class="list">
+              <div class="label">已下发</div>
+              <div id="already-send" class="text">2000</div>
+            </div>
+          </div>
+          <div  class="list-column">
+            <div class="list">
+              <div class="label">已拣配</div>
+              <div id="already-pick" class="text">2000</div>
+            </div>
+            <div class="list">
+              <div class="label">已复核</div>
+              <div id="already-review" class="text">2000</div>
+            </div>
+          </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div  class="col-4" style="flex-direction: column;">
+        <div class="dashboard-panel" id="turnover-ration"style="flex: 1" >
+          <div class="panel-header">
+            <div class="panel-title">
+                周转率
+            </div>
+            <div class="panel-title-value">60%</div>
+          </div>
+  
+          <div class="ration-container">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="0 0 320 27" version="1.1">
+                <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+                <title>Graph</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+                    <linearGradient x1="-1.11022302e-14%" y1="60%" x2="100%" y2="60%" id="turn-over-ration-svg">
+                        <stop stop-color="#49D991" offset="0%"/>
+                        <!-- <stop stop-color="#49D991" offset="29.7507225%"/> -->
+                        <stop stop-color="#4C84FF" class="change-point" offset="50%"/>
+                        <!-- <stop stop-color="#B28F38" offset="61.6808495%"/> -->
+                        <stop stop-color="#3E4B61" class="change-point" offset="50%"/>
+                        <stop stop-color="#3E4B61" offset="100%"/>
+                    </linearGradient>
+                </defs>
+                <g id="Page-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="dashboard2" transform="translate(-1073.000000, -105.000000)" fill="url(#turn-over-ration-svg)">
+                        <g id="Graph" transform="translate(1073.000000, 105.000000)">
+                            <path d="M0,0 L8.31168831,0 L8.31168831,27 L0,27 L0,0 Z M12.4675325,0 L20.7792208,0 L20.7792208,27 L12.4675325,27 L12.4675325,0 Z M24.9350649,0 L33.2467532,0 L33.2467532,27 L24.9350649,27 L24.9350649,0 Z M37.4025974,0 L45.7142857,0 L45.7142857,27 L37.4025974,27 L37.4025974,0 Z M49.8701299,0 L58.1818182,0 L58.1818182,27 L49.8701299,27 L49.8701299,0 Z M62.3376623,0 L70.6493506,0 L70.6493506,27 L62.3376623,27 L62.3376623,0 Z M74.8051948,0 L83.1168831,0 L83.1168831,27 L74.8051948,27 L74.8051948,0 Z M87.2727273,0 L95.5844156,0 L95.5844156,27 L87.2727273,27 L87.2727273,0 Z M99.7402597,0 L108.051948,0 L108.051948,27 L99.7402597,27 L99.7402597,0 Z M112.207792,0 L120.519481,0 L120.519481,27 L112.207792,27 L112.207792,0 Z M124.675325,0 L132.987013,0 L132.987013,27 L124.675325,27 L124.675325,0 Z M137.142857,0 L145.454545,0 L145.454545,27 L137.142857,27 L137.142857,0 Z M149.61039,0 L157.922078,0 L157.922078,27 L149.61039,27 L149.61039,0 Z M162.077922,0 L170.38961,0 L170.38961,27 L162.077922,27 L162.077922,0 Z M174.545455,0 L182.857143,0 L182.857143,27 L174.545455,27 L174.545455,0 Z M187.012987,0 L195.324675,0 L195.324675,27 L187.012987,27 L187.012987,0 Z M199.480519,0 L207.792208,0 L207.792208,27 L199.480519,27 L199.480519,0 Z M211.948052,0 L220.25974,0 L220.25974,27 L211.948052,27 L211.948052,0 Z M224.415584,0 L232.727273,0 L232.727273,27 L224.415584,27 L224.415584,0 Z M236.883117,0 L245.194805,0 L245.194805,27 L236.883117,27 L236.883117,0 Z M249.350649,0 L257.662338,0 L257.662338,27 L249.350649,27 L249.350649,0 Z M261.818182,0 L270.12987,0 L270.12987,27 L261.818182,27 L261.818182,0 Z M274.285714,0 L282.597403,0 L282.597403,27 L274.285714,27 L274.285714,0 Z M286.753247,0 L295.064935,0 L295.064935,27 L286.753247,27 L286.753247,0 Z M299.220779,0 L307.532468,0 L307.532468,27 L299.220779,27 L299.220779,0 Z M311.688312,0 L320,0 L320,27 L311.688312,27 L311.688312,0 Z" id="Graph-segments-group"/>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+          </div>
+        </div>
+        <div class="dashboard-panel"   style="flex: 2;margin-top: 16px;display: flex">
+            <div class="panel-header">
+                <div class="panel-title">
+                    库存使用率
+                </div>
+                <div class="panel-title-value">100%</div>
+              </div>
+              <div class="inventory-utilization-current">增长10%</div>
+              <div id="inventory-utilization" style="flex:1" ></div>
+          </div>
+      </div>
+
+
+
+
+    </div>
+    <div class="dashboard-row-2">
+      <div class="col-3">
+        <div class="calendar dashboard-panel" id="pick-value" style="display: flex"> 
+   
+        </div>
+      </div>
+      <div class="col-2">
+        <div class=" dashboard-panel" id="staff-progress">
+            <div class="panel-header">
+                <div class="panel-title">
+                    员工拣配工作进度
+                </div>
+                <!-- <div class="panel-title-value">100%</div> -->
+              </div>
+              <div class="table-container">
+                <div class="table-header">
+                  <div class="column">姓名</div>
+                  <div class="column">工作组</div>
+                  <div class="column">处理中</div>
+                  <div class="column">未作业</div>
+                  <div class="column">已完成</div>
+                </div>
+                <div class="tab-body">
+                  
+                </div>
+                
+       
+              </div>
+        </div>
+
+      </div>
+      <div class="col-2">
+
+        <div class="dashboard-panel"  id="addToTransport">
+          <div class="panel-header">
+            <div class="panel-title">
+              装车进度看板
+            </div>
+            <!-- <div class="panel-title-value">100%</div> -->
+          </div>
+          <div class="table-container">
+            <div class="table-header">
+              <div class="column">线路</div>
+              <div class="column">总体积</div>
+              <div class="column">已拣配</div>
+              <div class="column">已复合</div>
+              <div class="column">装车进度</div>
+            </div>
+            <div class="tab-body">
+              
+            </div>
+            
+   
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Don't delete this. It's needed for development workflow. -->
+    <script src="javascripts/bundle.js"></script>
+</body>
+<script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
+
+
+<script>
+
+  (function (root, factory) {
+    if (typeof define === 'function' && define.amd) {
+      // AMD. Register as an anonymous module.
+      define(['exports', 'echarts'], factory);
+    } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
+      // CommonJS
+      factory(exports, require('echarts'));
+    } else {
+      // Browser globals
+      factory({}, root.echarts);
+    }
+  }(this, function (exports, echarts) {
+    var log = function (msg) {
+      if (typeof console !== 'undefined') {
+        console && console.error && console.error(msg);
+      }
+    };
+    if (!echarts) {
+      log('ECharts is not Loaded');
+      return;
+    }
+    echarts.registerTheme('steven.fu', {
+      "color": [
+  
+        "#4ad991",
+        "#4c84ff",
+        "#ffb844",
+        "#ff5fa3",
+        "#61a0a8",
+        "#efa18d",
+        "#787464",
+        "#cc7e63",
+        "#724e58",
+        "#4b565b"
+      ],
+      "backgroundColor": "rgba(19,21,25,1)",
+      "textStyle": {},
+      "title": {
+        "textStyle": {
+          "color": "#ffffff"
+        },
+        "subtextStyle": {
+          "color": "#626f86"
+        }
+      },
+      "line": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": 1
+          }
+        },
+        "lineStyle": {
+          "normal": {
+            "width": 2
+          }
+        },
+        "symbolSize": 4,
+        "symbol": "circle",
+        "smooth": false
+      },
+      "radar": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": 1
+          }
+        },
+        "lineStyle": {
+          "normal": {
+            "width": 2
+          }
+        },
+        "symbolSize": 4,
+        "symbol": "circle",
+        "smooth": false
+      },
+      "bar": {
+        "itemStyle": {
+          "normal": {
+            "barBorderWidth": "0",
+            "barBorderColor": "#ccc"
+          },
+          "emphasis": {
+            "barBorderWidth": "0",
+            "barBorderColor": "#ccc"
+          }
+        }
+      },
+      "pie": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "scatter": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "boxplot": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "parallel": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "sankey": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "funnel": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "gauge": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          },
+          "emphasis": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        }
+      },
+      "candlestick": {
+        "itemStyle": {
+          "normal": {
+            "color": "#c23531",
+            "color0": "#314656",
+            "borderColor": "#c23531",
+            "borderColor0": "#314656",
+            "borderWidth": 1
+          }
+        }
+      },
+      "graph": {
+        "itemStyle": {
+          "normal": {
+            "borderWidth": "0",
+            "borderColor": "#ccc"
+          }
+        },
+        "lineStyle": {
+          "normal": {
+            "width": 1,
+            "color": "#aaa"
+          }
+        },
+        "symbolSize": 4,
+        "symbol": "circle",
+        "smooth": false,
+        "color": [
+          "#4c84ff",
+          "#4ad991",
+          "#ffb844",
+          "#ff5fa3",
+          "#61a0a8",
+          "#efa18d",
+          "#787464",
+          "#cc7e63",
+          "#724e58",
+          "#4b565b"
+        ],
+        "label": {
+          "normal": {
+            "textStyle": {
+              "color": "#ffffff"
+            }
+          }
+        }
+      },
+      "map": {
+        "itemStyle": {
+          "normal": {
+            "areaColor": "#eeeeee",
+            "borderColor": "#444444",
+            "borderWidth": 0.5
+          },
+          "emphasis": {
+            "areaColor": "rgba(255,215,0,0.8)",
+            "borderColor": "#444444",
+            "borderWidth": 1
+          }
+        },
+        "label": {
+          "normal": {
+            "textStyle": {
+              "color": "#000000"
+            }
+          },
+          "emphasis": {
+            "textStyle": {
+              "color": "rgb(100,0,0)"
+            }
+          }
+        }
+      },
+      "geo": {
+        "itemStyle": {
+          "normal": {
+            "areaColor": "#eeeeee",
+            "borderColor": "#444444",
+            "borderWidth": 0.5
+          },
+          "emphasis": {
+            "areaColor": "rgba(255,215,0,0.8)",
+            "borderColor": "#444444",
+            "borderWidth": 1
+          }
+        },
+        "label": {
+          "normal": {
+            "textStyle": {
+              "color": "#000000"
+            }
+          },
+          "emphasis": {
+            "textStyle": {
+              "color": "rgb(100,0,0)"
+            }
+          }
+        }
+      },
+      "categoryAxis": {
+        "axisLine": {
+          "show": false,
+          "lineStyle": {
+            "color": "#ffffff"
+          }
+        },
+        "axisTick": {
+          "show": false,
+          "lineStyle": {
+            "color": "#ffffff"
+          }
+        },
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#ffffff"
+          }
+        },
+        "splitLine": {
+          "show": false,
+          "lineStyle": {
+            "color": [
+              "#ccc"
+            ]
+          }
+        },
+        "splitArea": {
+          "show": false,
+          "areaStyle": {
+            "color": [
+              "rgba(250,250,250,0.3)",
+              "rgba(200,200,200,0.3)"
+            ]
+          }
+        }
+      },
+      "valueAxis": {
+        "axisLine": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisTick": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#ffffff"
+          }
+        },
+        "splitLine": {
+          "show": false,
+          "lineStyle": {
+            "color": [
+              "#ccc"
+            ]
+          }
+        },
+        "splitArea": {
+          "show": false,
+          "areaStyle": {
+            "color": [
+              "rgba(250,250,250,0.3)",
+              "rgba(200,200,200,0.3)"
+            ]
+          }
+        }
+      },
+      "logAxis": {
+        "axisLine": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisTick": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#333"
+          }
+        },
+        "splitLine": {
+          "show": false,
+          "lineStyle": {
+            "color": [
+              "#ccc"
+            ]
+          }
+        },
+        "splitArea": {
+          "show": false,
+          "areaStyle": {
+            "color": [
+              "rgba(250,250,250,0.3)",
+              "rgba(200,200,200,0.3)"
+            ]
+          }
+        }
+      },
+      "timeAxis": {
+        "axisLine": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisTick": {
+          "show": false,
+          "lineStyle": {
+            "color": "#333"
+          }
+        },
+        "axisLabel": {
+          "show": true,
+          "textStyle": {
+            "color": "#333"
+          }
+        },
+        "splitLine": {
+          "show": false,
+          "lineStyle": {
+            "color": [
+              "#ccc"
+            ]
+          }
+        },
+        "splitArea": {
+          "show": false,
+          "areaStyle": {
+            "color": [
+              "rgba(250,250,250,0.3)",
+              "rgba(200,200,200,0.3)"
+            ]
+          }
+        }
+      },
+      "toolbox": {
+        "iconStyle": {
+          "normal": {
+            "borderColor": "#0d0d0d"
+          },
+          "emphasis": {
+            "borderColor": "#666666"
+          }
+        }
+      },
+      "legend": {
+        "textStyle": {
+          "color": "#ffffff"
+        }
+      },
+      "tooltip": {
+        "axisPointer": {
+          "lineStyle": {
+            "color": "#9ea7ba",
+            "width": ".5"
+          },
+          "crossStyle": {
+            "color": "#9ea7ba",
+            "width": ".5"
+          }
+        }
+      },
+      "timeline": {
+        "lineStyle": {
+          "color": "#293c55",
+          "width": 1
+        },
+        "itemStyle": {
+          "normal": {
+            "color": "#293c55",
+            "borderWidth": 1
+          },
+          "emphasis": {
+            "color": "#a9334c"
+          }
+        },
+        "controlStyle": {
+          "normal": {
+            "color": "#293c55",
+            "borderColor": "#293c55",
+            "borderWidth": 0.5
+          },
+          "emphasis": {
+            "color": "#293c55",
+            "borderColor": "#293c55",
+            "borderWidth": 0.5
+          }
+        },
+        "checkpointStyle": {
+          "color": "#e43c59",
+          "borderColor": "rgba(194,53,49,0.5)"
+        },
+        "label": {
+          "normal": {
+            "textStyle": {
+              "color": "#293c55"
+            }
+          },
+          "emphasis": {
+            "textStyle": {
+              "color": "#293c55"
+            }
+          }
+        }
+      },
+      "visualMap": {
+        "color": [
+          "#bf444c",
+          "#d88273",
+          "#f6efa6"
+        ]
+      },
+      "dataZoom": {
+        "backgroundColor": "rgba(47,69,84,0)",
+        "dataBackgroundColor": "rgba(47,69,84,0.3)",
+        "fillerColor": "rgba(167,183,204,0.4)",
+        "handleColor": "#a7b7cc",
+        "handleSize": "100%",
+        "textStyle": {
+          "color": "#333333"
+        }
+      },
+      "markPoint": {
+        "label": {
+          "normal": {
+            "textStyle": {
+              "color": "#ffffff"
+            }
+          },
+          "emphasis": {
+            "textStyle": {
+              "color": "#ffffff"
+            }
+          }
+        }
+      }
+    });
+  }));
+
+
+</script>
+
+</html>
